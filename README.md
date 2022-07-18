@@ -1,5 +1,5 @@
-# Ceiboo DDD
-Ceiboo DDD es un skeleton para Symfony
+# Ceiboo DDDS
+Ceiboo DDDS es un skeleton DDD para Symfony
 
 ### Installation ###
 * `git clone git@github.com:Ceiboo/ceiboo-ddd.git`
@@ -8,32 +8,26 @@ Ceiboo DDD es un skeleton para Symfony
 * `docker-compose up -d`
 * `docker-compose exec ceiboo composer update`
 
-### Ingresar a la app ###
-En tu archivo /etc/hosts incluir las siguientes lineas
+### Setting your computer ###
+In your file /etc/hosts add
 * `127.0.0.1 api.ceiboo.jla`
 * `127.0.0.1 auth.ceiboo.jla`
 
-* `127.0.0.1 mysql.ceiboo.jla`
-
-
-### Testear que funciona ###
-- Test de instalación en terminal:
+### Test ###
+- Test in console:
 * `docker-compose exec ceiboo php command status --app=api/mid10`
 * `docker-compose exec ceiboo php command status --app=backend/auth`
 
-- Test de instalación en navegador:
+- Test in postman:
 * `http://api.ceiboo.jla/status`
 * `http://auth.ceiboo.jla/status`
 
-- Test de aceptación en terminal:
+- Acceptance test:
 * `docker-compose exec ceiboo ./vendor/bin/behat -p api_mid10`
 * `docker-compose exec ceiboo ./vendor/bin/behat -p auth_user`
 
-- Test unitarios y test de integracion
+- Unit Test:
 * `docker-compose exec ceiboo ./vendor/bin/phpunit -c apps/auth/user/phpunit.xml`
-
-### Acceso a base de datos ###
-* `http://mysql.ceiboo.jla`
 
 ### Otros comandos ###
 Para bajar los dockers
