@@ -1,5 +1,5 @@
 # Ceiboo DDD
-Ceiboo DDD es un skeleton base en el que implementaremos Domain Driven Design
+Ceiboo DDD es un skeleton para Symfony
 
 ### Installation ###
 * `git clone git@github.com:Ceiboo/ceiboo-ddd.git`
