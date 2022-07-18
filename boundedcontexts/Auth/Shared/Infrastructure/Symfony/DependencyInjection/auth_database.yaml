@@ -1,0 +1,17 @@
+services:
+
+  Doctrine\ORM\EntityManager:
+    factory: [Ceiboo\Shared\Infrastructure\Doctrine\CeibooEntityManagerFactory, create]
+    arguments:
+      - driver:   '%env(DATABASE_DRIVER)%'
+        host:     '%env(DATABASE_HOST)%'
+        port:     '%env(DATABASE_PORT)%'
+        dbname:   '%env(DATABASE_NAME)%'
+        user:     '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PASSWORD)%'
+      - 'Auth/Shared/Infrastructure/Migrations'
+      - 0: 'Auth/Companies/Infrastructure/Mappings/Tables:Ceiboo\Auth\Companies\Domain\Entities'
+        1: 'Auth/Companies/Infrastructure/Mappings/Fields:Ceiboo\Auth\Companies\Domain\ValueObjects'
+      - 0: 'Ceiboo\Auth\Companies\Infrastructure\Mappings\CustomFields\CountryIdType'
+    tags:
+      - { name: ceiboo-ddd-dbauth }

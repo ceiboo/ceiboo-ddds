@@ -1,0 +1,3 @@
+imports:
+  - tests/apps/backend/configuration/backend_configuration.yaml
+  - tests/apps/api/mid10/api_mid10.yaml

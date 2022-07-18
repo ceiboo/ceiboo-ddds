@@ -1,0 +1,4 @@
+status_get:
+    path: /status
+    controller: Ceiboo\Apps\Api\Mid10\Controller\Status\StatusGetController
+    methods:  [GET]

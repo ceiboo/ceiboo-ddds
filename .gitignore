@@ -1,0 +1,9 @@
+/apps/*/.env.local
+/apps/*/.env.*.local
+/vendor/
+
+/.docker/phpmyadmin/
+/apps/*/*/var/
+/apps/*/var/
+
+.phpunit.result.cache

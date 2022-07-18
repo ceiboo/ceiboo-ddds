@@ -1,0 +1,18 @@
+api_mid10:
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      kernel:
+        class: Fulljaus\Apps\Api\Mid10\ApiMid10Kernel
+      bootstrap: apps/api/mid10/bootstrap.php
+    Behat\MinkExtension:
+      sessions:
+        symfony:
+          symfony: ~
+      base_url: ''
+
+  suites:
+    health_check:
+      paths: [ tests/apps/api/mid10/features/status ]
+      contexts:
+        - Fulljaus\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - Fulljaus\Tests\Shared\Infrastructure\Behat\ApiResponseContext

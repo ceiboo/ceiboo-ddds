@@ -1,0 +1,4 @@
+services:
+
+  # Countries
+  Ceiboo\Auth\Companies\Domain\Repositories\CompanyRepository: '@Ceiboo\Auth\Companies\Infrastructure\Doctrine\DoctrineCompanyRepository'

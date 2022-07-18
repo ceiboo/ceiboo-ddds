@@ -1,0 +1,4 @@
+countries_put:
+    path: /users/{id}
+    controller: Ceiboo\Apps\Backend\Auth\Controller\Users\UsersPutController
+    methods:  [PUT]

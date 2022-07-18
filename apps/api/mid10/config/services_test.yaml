@@ -1,0 +1,12 @@
+framework:
+  test: true
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  Ceiboo\Tests\:
+    resource: '../../../../tests/boundedcontexts'
+
+  Ceiboo\Shared\Domain\RandomNumberGenerator: '@Ceiboo\Tests\Shared\Infrastructure\ConstantRandomNumberGenerator'

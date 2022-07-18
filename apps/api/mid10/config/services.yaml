@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  Ceiboo\Apps\Api\Mid10\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  Ceiboo\Apps\Api\Mid10\Command\:
+    resource: '../src/Command'
+    tags: ['console.command']
+
+  Ceiboo\:
+    resource: '../../../../boundedcontexts'
+
+  Ceiboo\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

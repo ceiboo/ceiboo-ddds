@@ -1,0 +1,18 @@
+backend_configuration:
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      kernel:
+        class: Ceiboo\Apps\Backend\Auth\BackendAuthKernel
+      bootstrap: apps/backend/auth/bootstrap.php
+    Behat\MinkExtension:
+      sessions:
+        symfony:
+          symfony: ~
+      base_url: ''
+
+  suites:
+    countries:
+      paths: [ tests/apps/backend/auth/features/users, tests/apps/backend/auth/features/companies ]
+      contexts:
+        - Ceiboo\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - Ceiboo\Tests\Shared\Infrastructure\Behat\ApiResponseContext
