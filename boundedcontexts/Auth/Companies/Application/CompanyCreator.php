@@ -30,7 +30,7 @@ final class CompanyCreator {
         $country    = new CompanyCountry($request->country());
         $status     = new CompanyStatus($request->status());
 
-        $company = new Company($id, $name, $address, $country, $status);
+        $company = Company::create($id, $name, $address, $country, $status);
 
         $this->repository->save($company);
     }

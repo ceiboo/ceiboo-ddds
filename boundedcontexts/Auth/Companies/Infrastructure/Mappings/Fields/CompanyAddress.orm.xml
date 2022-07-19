@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <embeddable name="Ceiboo\Auth\CompaniesDomain\ValueObjects\CompanyIso">
+    <embeddable name="Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyAddress">
         <field name="value" type="string" column="address" />
     </embeddable>
 

@@ -4,14 +4,14 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="Ceiboo\Auth\CompaniesDomain\Entities\Company" table="countries">
+    <entity name="Ceiboo\Auth\Companies\Domain\Entities\Company" table="companies">
 
         <id name="id" type="company_id" column="id" length="36" />
 
-        <embedded name="name" class="Ceiboo\Auth\CompaniesDomain\ValueObjects\CompanyName" use-column-prefix="false" />
-        <embedded name="iso" class="Ceiboo\Auth\CompaniesDomain\ValueObjects\CompanyAddress" use-column-prefix="false" />
-        <embedded name="phonecode" class="Ceiboo\Auth\CompaniesDomain\ValueObjects\CompanyCountry" use-column-prefix="false" />
-        <embedded name="status" class="Ceiboo\Auth\CompaniesDomain\ValueObjects\CompanyStatus" use-column-prefix="false" />
+        <embedded name="name" class="Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyName" use-column-prefix="false" />
+        <embedded name="address" class="Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyAddress" use-column-prefix="false" />
+        <embedded name="country" class="Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyCountry" use-column-prefix="false" />
+        <embedded name="status" class="Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyStatus" use-column-prefix="false" />
 
     </entity>
 

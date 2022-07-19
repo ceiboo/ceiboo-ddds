@@ -1,0 +1,4 @@
+companies_put:
+    path: /company/{id}
+    controller: Ceiboo\Apps\Backend\Auth\Controller\Companies\CompaniesPutController
+    methods:  [PUT]

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Ceiboo\Auth\Companies\Infrastructure\Mappings\CustomFields;
 
-use Ceiboo\Auth\Companies\Domain\ValueObjects\CountryId;
+use Ceiboo\Auth\Companies\Domain\ValueObjects\CompanyId;
 use Ceiboo\Shared\Infrastructure\Doctrine\UuidType;
 
 final class CompanyIdType extends UuidType
@@ -16,6 +16,6 @@ final class CompanyIdType extends UuidType
 
     protected function typeClassName(): string
     {
-        return CountryId::class;
+        return CompanyId::class;
     }
 }
