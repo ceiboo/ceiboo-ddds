@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Ceiboo\Auth\Users\Domain\Entities\User" table="users">
+
+        <id name="id" type="user_id" column="id" length="36" />
+
+        <embedded name="name" class="Ceiboo\Auth\Users\Domain\ValueObjects\UserName" use-column-prefix="false" />
+        <embedded name="email" class="Ceiboo\Auth\Users\Domain\ValueObjects\UserEmail" use-column-prefix="false" />
+        <embedded name="token" class="Ceiboo\Auth\Users\Domain\ValueObjects\UserToken" use-column-prefix="false" />
+        <embedded name="password" class="Ceiboo\Auth\Users\Domain\ValueObjects\UserPassword" use-column-prefix="false" />
+        <embedded name="status" class="Ceiboo\Auth\Users\Domain\ValueObjects\UserStatus" use-column-prefix="false" />
+
+    </entity>
+
+</doctrine-mapping>
