@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 final class UsersPutController
 {
     private $creator;
-/*
+
     public function __construct(UserCreator $creator)
     {
         $this->creator = $creator;
@@ -22,13 +22,13 @@ final class UsersPutController
     {
         $company_id = $request->request->get('company_id');
         $name = $request->request->get('name');
-        $role = $request->request->get('role');
         $email = $request->request->get('email');
+        $token = $request->request->get('token');
+        $password = $request->request->get('password');
         $status = $request->request->get('status');
 
-        $this->creator->__invoke(new CreateUserRequest($id, $company_id, $name, $role, $email, $status));
+        $this->creator->__invoke(new CreateUserRequest($id, $company_id, $name, $email, $token, $password, $status));
 
         return new Response('', Response::HTTP_CREATED);
     }
-    */
 }
