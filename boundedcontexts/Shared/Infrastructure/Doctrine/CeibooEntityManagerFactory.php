@@ -21,18 +21,19 @@ final class CeibooEntityManagerFactory
 
     public static function create(array $parameters, string $migrations, array $mappings, array $dbalCustomTypesClasses): EntityManagerInterface
     {
+
         self::$boundedContextPath=$_ENV['BASE_PATH']. '/boundedcontexts/' ;
 
         $isDevMode = 'prod' === $_ENV['APP_ENV'];
 
-        $migrationsFilesSQL=self::migrationsSearchFilesSQL($migrations);
+        //$migrationsFilesSQL=self::migrationsSearchFilesSQL($migrations);
 
-        if ($isDevMode) {
+/*        if ($isDevMode) {
             map(static function($file) use($parameters) {
                 static::generateDatabaseIfNotExists($parameters, $file);
             }, $migrationsFilesSQL);
         }
-
+*/
         $mappingsArray=self::mappingsCreateArray($mappings);
 
         return DoctrineEntityManagerFactory::create(
@@ -52,7 +53,7 @@ final class CeibooEntityManagerFactory
         $mappings);
         return $resultMap;
     }
-
+/*
     private static function migrationsSearchFilesSQL(string $migrationPath): array
     {
         $realpath=self::$boundedContextPath . $migrationPath. '/';
@@ -77,11 +78,15 @@ final class CeibooEntityManagerFactory
         $connection                    = DriverManager::getConnection($parametersWithoutDatabaseName);
         $schemaManager                 = new MySqlSchemaManager($connection);
 
+
+
         if (!self::databaseExists($databaseName, $schemaManager)) {
+            dd("entra");die;
             $schemaManager->createDatabase($databaseName);
             $connection->exec(sprintf('USE %s', $databaseName));
             $connection->exec(file_get_contents(realpath($schemaFile)));
         }
+        dd('no entra');die;
 
         $connection->close();
     }
@@ -97,5 +102,5 @@ final class CeibooEntityManagerFactory
             throw new RuntimeException(sprintf('The file <%s> does not exist', $schemaFile));
         }
     }
-
+*/
 }

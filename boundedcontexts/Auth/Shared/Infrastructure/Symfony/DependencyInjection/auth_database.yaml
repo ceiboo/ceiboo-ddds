@@ -9,9 +9,13 @@ services:
         dbname:   '%env(DATABASE_NAME)%'
         user:     '%env(DATABASE_USER)%'
         password: '%env(DATABASE_PASSWORD)%'
+        charset:  UTF8
       - 'Auth/Shared/Infrastructure/Migrations'
       - 0: 'Auth/Companies/Infrastructure/Mappings/Tables:Ceiboo\Auth\Companies\Domain\Entities'
         1: 'Auth/Companies/Infrastructure/Mappings/Fields:Ceiboo\Auth\Companies\Domain\ValueObjects'
+        2: 'Auth/Users/Infrastructure/Mappings/Tables:Ceiboo\Auth\Users\Domain\Entities'
+        3: 'Auth/Users/Infrastructure/Mappings/Fields:Ceiboo\Auth\Users\Domain\ValueObjects'
       - 0: 'Ceiboo\Auth\Companies\Infrastructure\Mappings\CustomFields\CompanyIdType'
+        1: 'Ceiboo\Auth\Users\Infrastructure\Mappings\CustomFields\UserIdType'
     tags:
       - { name: ceiboo-ddd-dbauth }

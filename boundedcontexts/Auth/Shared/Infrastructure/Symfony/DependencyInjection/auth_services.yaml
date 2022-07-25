@@ -1,4 +1,6 @@
 services:
 
   # Countries
+  Ceiboo\Shared\Domain\Services\MigrationInterfaceServices: '@Ceiboo\Shared\Infrastructure\Doctrine\Migration'
   Ceiboo\Auth\Companies\Domain\Repositories\CompanyRepository: '@Ceiboo\Auth\Companies\Infrastructure\Doctrine\DoctrineCompanyRepository'
+  Ceiboo\Auth\Companies\Domain\Repositories\UserRepository: '@Ceiboo\Auth\Companies\Infrastructure\Doctrine\DoctrineUserRepository'

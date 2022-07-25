@@ -40,5 +40,13 @@ Crea las tablas a partir del archivo:
 - Test Unitario:
 * `docker-compose exec ceiboo ./vendor/bin/phpunit -c apps/auth/user/phpunit.xml`
 
+### Migrar las base de datos del Contexto Auth ###
+- Migrar sin seeders:
+* `docker-compose exec ceiboo php command migrate --app=backend/auth`
+
+- Migrar con seeders:
+* `docker-compose exec ceiboo php command migrate --app=backend/auth --seed`
+
+
 ### Otros comandos ###
 * `docker-compose down`
